@@ -1,0 +1,53 @@
+{
+  "name": "bill-buddy",
+  "version": "1.0.0",
+  "description": "Transaction management",
+  "main": "index.js",
+  "repository": " ",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "husky": "^8.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "lint-staged": "^14.0.1",
+    "mongoose": "^7.5.2",
+    "mongoose-paginate-v2": "^1.7.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "ts-node": "^10.9.1"
+  },
+
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn format"
+    ]
+  },
+
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.4",
+    "@types/cors": "^2.8.14",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.3",
+    "@types/morgan": "^1.9.5",
+    "@types/node": "^20.6.3",
+    "eslint": "^8.49.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+
+  "scripts": {
+    "start": "node build/index.js",
+    "compile": "tsc && node build/index.js",
+    "build": "tsc",
+    "dev": "nodemon -e .ts --exec \"yarn compile\"",
+    "lint": "eslint --ext .js,.ts .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "prepare": "husky install"
+  }
+}
