@@ -46,3 +46,5 @@ yarn run dev
 ```
 
 The server should be ruuning at your local host port 4000.
+
+The frontend for this: https://github.com/itsKhadeer/BillBuddy.git
