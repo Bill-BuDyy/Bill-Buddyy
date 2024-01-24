@@ -48,3 +48,4 @@ yarn run dev
 The server should be ruuning at your local host port 4000.
 
 The frontend for this: https://github.com/Bill-BuDyy/Bill-Buddy-App
+Join our Discord Channel for more info: https://discord.com/invite/tuWBYEg6 
