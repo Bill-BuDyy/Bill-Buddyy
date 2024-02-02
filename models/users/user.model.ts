@@ -1,5 +1,5 @@
-import { Schema, model, Document, PaginateModel } from "mongoose";
-import paginate from "mongoose-paginate-v2";
+import { Schema, model, Document, PaginateModel } from 'mongoose';
+import paginate from 'mongoose-paginate-v2';
 
 interface UserInterface extends Document {
   name: string;
@@ -8,33 +8,17 @@ interface UserInterface extends Document {
   dateOfBirth: Date;
   image: string;
   instagram: string;
+  password: string;
 }
 
-const UserSchema = new Schema<UserInterface>({
-  name: {
-    type: String,
-    default: "",
-  },
-  email: {
-    type: String,
-    default: "",
-  },
-  contact: {
-    type: String,
-    default: "",
-  },
-  dateOfBirth: {
-    type: Date,
-    default: null,
-  },
-  image: {
-    type: String,
-    default: null,
-  },
-  instagram: {
-    type: String,
-    default: "",
-  },
+const UserSchema: Schema = new Schema<UserInterface>({
+  name: { type: String, required: true, default: '' },
+  email: { type: String, required: true, unique: true, default: '' },
+  contact: { type: String, required: true, default: '' },
+  dateOfBirth: { type: Date, default: null },
+  image: { type: String, default: null },
+  instagram: { type: String, default: '' },
+  password: { type: String, required: true },
 });
 
 UserSchema.plugin(paginate);

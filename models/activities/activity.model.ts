@@ -1,7 +1,7 @@
 import { Schema, model, Document, PaginateModel } from 'mongoose';
 import paginate from 'mongoose-paginate-v2';
 
-interface ActivityInterface extends Document {
+export interface ActivityInterface extends Document {
   activityType: string;
   performedBy: Schema.Types.ObjectId;
   affectedEntity: {
@@ -46,3 +46,4 @@ ActivitySchema.plugin(paginate);
 const ActivityModel = model<ActivityInterface, PaginateModel<ActivityInterface>>('Activity', ActivitySchema);
 
 export default ActivityModel;
+
