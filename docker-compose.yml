@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: bill-buddy-backend
+    restart: always
+    build: .
+    ports:
+      - "4000:4000"
+    links:
+      - mongo
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/bill-Buddy
+      - PORT=4000
+      - ENV=DEV
+      - GOOGLE_CLIENT_ID=fill-this-one-up
+      - GOOGLE_CLIENT_SECRET=same-as-the-above
+      - GOOGLE_USER_REDIRECT_URI=same-as-the-above
+      - GOOGLE_ADMIN_REDIRECT_URI=same-as-the-above
+      - JWT_SECRET=same-as-the-above
+      - FRONTEND_URL=fill-this-one-up
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+  mongo:
+    container_name: bill-buddy-mongo
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+
+volumes:
+  mongodb-data:
